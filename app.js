@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: '1d' }));
 app.use(session({
-  secret: 'keyboard cat',
+  secret: Math.random().toString(36).slice(2),
   resave: false,
   saveUninitialized: true
 }));
